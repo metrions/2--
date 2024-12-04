@@ -53,6 +53,8 @@ public:
 
     // Запись в файл
     void saveTofile(std::string path) const override;
+    // Загрузка из файла
+    void load(std::string stream) override;
 
     // Деструктор
     ~Distribution();

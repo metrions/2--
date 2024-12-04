@@ -12,6 +12,18 @@ Distribution::Distribution(ifstream &stream) {
     setL(tempL);
 }
 
+void Distribution::load(std::string path) {
+    std::ifstream in;
+    in.open(path);
+    float tempV;
+    float tempU;
+    float tempL;
+    in >> tempV >> tempU >> tempL;
+    setV(tempV);
+    setU(tempU);
+    setL(tempL);
+}
+
 // Базовый конструктор для наследников
 Distribution::Distribution() {}
 
@@ -27,12 +39,7 @@ double* Distribution::modelingPool(int size) {
 // Возврат характеристик
 double* Distribution::getProperties() const {
     double* mas = properties();
-    // cout << "Mathematical expectation = " << mas[0] << endl;
-    // cout << "Dispersion = " << mas[1] << endl;
-    // cout << "Coefficient of asymmetry = " << mas[2] << endl;
-    // cout << "Coefficient of excess = " << mas[3] << endl;
     return mas;
-    // delete[] mas;
 }
 
 void Distribution::showProperties() const {

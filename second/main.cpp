@@ -115,19 +115,28 @@ void modelingTime(int N){
 */
 int main(){
     // test();
-    ifstream in("./files/file.txt");
-    Distribution newDist(in);
-    IDistribution& newElem = newDist;
+    // ifstream in("./files/file.txt");
+    // Distribution newDist;
+    // IDistribution& newElem = newDist;
+    // newElem.setL(1);
+    // newElem.setU(0);
+    // newElem.setV(1.5);
+    // newElem.saveTofile("./files/out");
 
-    // cout << newElem.density(2) << endl;
-    // cout << newElem.density(4) << endl;
-    // cout << newElem.density(8) << endl;
-    std::ofstream out;
-    out.open("pool.txt");
-    double* mas = newElem.modelingPool(1000);
-        for (int i=0; i<1000; i++){
-        out << mas[i] << endl;
-    }
+    Distribution newDist2;
+    IDistribution& newElem2 = newDist2;
+    newElem2.load("./files/out.txt");
+    cout << newElem2.getL() << endl;
+    cout << newElem2.getU() << endl;
+    cout << newElem2.getV() << endl;
+
+
+    // std::ofstream out;
+    // out.open("pool.txt");
+    // double* mas = newElem.modelingPool(1000);
+    //     for (int i=0; i<1000; i++){
+    //     out << mas[i] << endl;
+    // }
     // destinityTime(1000);
     // modelingTime(1000);
     // propertiesTime(1000);
